@@ -1,0 +1,61 @@
+你正在执行一个【严格的 ZIP 文件结构枚举任务】。
+
+【硬性约束（必须逐条遵守，不得违反）】
+1. 禁止基于语义、经验或常识推断目录结构。
+2. 禁止合并、简化、规范化或“整理”任何目录或文件。
+3. 禁止使用历史对话、先验知识或对实验结构的理解。
+4. 你必须把 ZIP 文件视为【一组路径字符串列表】。
+5. 你必须仅通过逐条枚举 ZIP 内部路径（等价于 `zipinfo -1` 或 `unzip -l`）来获取信息。
+6. 目录树只能通过对路径字符串按 `/` 进行分割来重建。
+7. 即使某个目录是空目录，也必须在输出中明确显示。
+8. 即使出现 `__MACOSX`、`.DS_Store`、`._*` 等文件，也必须完整列出，不得省略。
+9. 禁止猜测任何 ZIP 中不存在的文件或目录。
+10. 禁止修正拼写、重命名文件或“看起来更合理”的调整。
+
+【输出要求】
+- 仅输出文件树本身。
+- 使用等宽字符（monospace）的树状结构。
+- 不得附加解释、总结、注释或分析文字。
+- 同一目录下仅允许按字典序排序，不得跨层调整顺序。
+
+【作用范围约束】
+- 你的输出必须完全且只基于当前提供的 ZIP 文件。
+- 如果 ZIP 中不存在某信息，不得提及。
+
+【失败处理】
+- 如果你无法在不违反以上约束的情况下枚举 ZIP 内容，
+  你必须原样输出：
+  “在当前约束下无法安全枚举 ZIP 文件内容。”
+
+
+——————————————————————————————————————————————————————————————————————————————————
+
+
+You are performing a strict ZIP file inspection task.
+
+Hard constraints (must follow exactly):
+1. You MUST NOT infer, normalize, merge, or simplify directory structures.
+2. You MUST NOT use any prior knowledge, expectations, or semantic understanding.
+3. You MUST treat the ZIP archive as a flat list of file paths.
+4. You MUST enumerate file paths ONLY by iterating over the ZIP’s internal file list
+   (i.e., equivalent to `zipinfo -1` or `unzip -l`).
+5. You MUST reconstruct the directory tree strictly by splitting paths on `/`.
+6. If a directory exists but contains no files, it MUST still be shown as an empty directory.
+7. If files appear under __MACOSX or contain ._ prefixes, they MUST be listed explicitly.
+8. You MUST NOT omit .DS_Store, __MACOSX, or any resource fork files.
+9. You MUST NOT guess missing files or directories.
+10. You MUST NOT correct typos or rename anything.
+
+Output requirements:
+- Output ONLY a directory tree.
+- Use a monospace tree format.
+- Do NOT add explanations, summaries, or comments.
+- Do NOT reorder files except by lexicographic order within the same directory.
+
+Scope constraint:
+- Base your output ONLY on the provided ZIP file.
+- If information is not present in the ZIP, do not mention it.
+
+Failure condition:
+- If you cannot enumerate paths directly from the ZIP file contents, you must say:
+  “Cannot enumerate ZIP contents safely under given constraints.”
