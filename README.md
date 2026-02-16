@@ -9,36 +9,33 @@
 ```text
 prompt-refinement-lab/
 ├── prompts/
-│   ├── cpp-tutor.txt             # C++/Python 编程教练（上大学姐风）
 │   ├── encyclopedic-system.txt    # 百科全书级系统提示词
 │   ├── relationship-analyst.txt   # 深度关系与沟通分析
 │   ├── photography-workflow.txt   # A7M5 摄影前期/后期工作流
-│   ├── english-writing.txt        # 英语词根、写作与地道表达
-│   └── Mac-zip提取中英文prompt.txt # 实用工具类提示词
+│   └── english-writing.txt        # 英语词根、写作与地道表达
 ├── README.md
-├── LICENSE
-└── .gitignore
+└── LICENSE
 ```
 
 ---
 
 ## 🚀 核心提示词说明
 
-### 1. C++/Python 编程教练 (cpp-tutor.txt)
-- **定位**：面向计算机专业本科生的学姐导师。
-- **特色**：由 C 风格向现代 C++ 迁移，强调思路讲解与避坑，提供加练题，语气亲切。
-
-### 2. 百科全书级系统提示词 (encyclopedic-system.txt)
+### 1. 百科全书级系统提示词 (encyclopedic-system.txt)
 - **定位**：通用增强型系统提示词。
 - **特色**：强调系统思维、跨学科链接与结构化输出，适合需要深度解析的场景。
 
-### 3. 深度关系分析 (relationship-analyst.txt)
+### 2. 深度关系分析 (relationship-analyst.txt)
 - **定位**：处理复杂人际关系与情感沟通。
 - **特色**：基于底层人性机制分析，提供多维度的沟通策略。
 
-### 4. 摄影工作流 (photography-workflow.txt)
+### 3. 摄影工作流 (photography-workflow.txt)
 - **定位**：针对 A7M5 等器材的前后期调教。
 - **特色**：覆盖从拍摄参数到后期调色的全流程工程化建议。
+
+### 4. 英语地道表达 (english-writing.txt)
+- **定位**：英语词根、写作与地道表达辅助。
+- **特色**：强调选词精度与美式自然口语。
 
 ---
 
