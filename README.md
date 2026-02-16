@@ -9,6 +9,7 @@
 ```text
 prompt-refinement-lab/
 ├── prompts/
+│   ├── talent-excavator.txt       # 深度天赋挖掘机（源自：数字生命卡兹克）
 │   ├── encyclopedic-system.txt    # 百科全书级系统提示词
 │   ├── relationship-analyst.txt   # 深度关系与沟通分析
 │   ├── photography-workflow.txt   # A7M5 摄影前期/后期工作流
@@ -21,7 +22,11 @@ prompt-refinement-lab/
 
 ## 🚀 核心提示词说明
 
-### 1. 百科全书级系统提示词 (encyclopedic-system.txt)
+### 1. 深度天赋挖掘机 (talent-excavator.txt)
+- **定位**：基于心理学与生涯咨询的天赋挖掘助理。
+- **特色**：多轮深度对话，通过“能量审计”与“阴影挖掘”找到底层天赋。源自“数字生命卡兹克”。
+
+### 2. 百科全书级系统提示词 (encyclopedic-system.txt)
 - **定位**：通用增强型系统提示词。
 - **特色**：强调系统思维、跨学科链接与结构化输出，适合需要深度解析的场景。
 
