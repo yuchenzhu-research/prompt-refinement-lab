@@ -20,7 +20,7 @@ prompt-refinement-lab/
 
 ---
 
-## 🚀 核心提示词说明
+## 🚀 Skills (核心提示词说明)
 
 ### 1. 深度天赋挖掘机 (talent-excavator.txt)
 - **定位**：基于心理学与生涯咨询的天赋挖掘助理。
