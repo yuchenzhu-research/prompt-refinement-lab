@@ -13,40 +13,39 @@
 
 ---
 
-## 📖 碎碎念 (Why this matters)
+## 📖 设计理念
 
-这个仓库里的提示词，并不是那种“一句话搞定”的简单指令。
+本仓库旨在解决 Prompt Engineering 在实际落地中的“精度”与“稳定性”问题。不同于宽泛的指令，这里的每一个 Skill 都是我基于特定高频场景（如托福备考、专业摄影、博弈沟通）深度打磨的产物。
 
-由于我正在准备托福并计划出国，同时也在深度折腾 A7M5 摄影，我发现市面上大部分提示词要么太虚（AI 味太重），要么太散（不符合工程逻辑）。所以我花了很多时间去“打磨”这套提示词：
-
-- **从“实验室”到“生产工具”**：我已经把所有杂乱的测试过程和中间稿都删了，这里只留我每天都在用的最强版本。
-- **实战导向**：比如英语教练，我不要那种教你“Hello”的，我要的是能帮我改出一封不卑不亢、专业得体的留美申请邮件，或者教我怎么在点餐时像个当地人。
-- **高主体性**：所有的角色设定都强调**“我”才是控制者**。AI 是我的军师和教练，而不是那个替我做决定的人。
+### 核心原则
+- **反“废话”架构**：剥离所有 AI 常见的客套话与模板化表述，追求极致的信息密度。
+- **高主体性 (High Agency)**：所有角色均设定为“教练”或“咨询师”，强调以用户为决策中心，AI 仅提供深度辅助。
+- **工程化 SOP**：针对 A7M5 影像等复杂任务，将零散知识转化为可复现的标准化操作流程。
 
 ---
 
-## 🚀 Skills (核心提示词库)
+## 🚀 Skills 核心能力块
 
-这里是我目前最核心的几个能力模块。建议直接把 `.txt` 里的内容贴到 AI 的 **System Prompt**（系统指令）里效果最好。
+建议将选中的 `.txt` 内容直接作为 AI 模型的 **System Prompt**（系统指令）使用。
 
-| Skill 名称 | 提示词文件 | 什么时候用它？ |
+| Skill 模块 | 核心文件 | 适用场景与技术特性 |
 | :--- | :--- | :--- |
-| **深度天赋挖掘机** | [`talent-excavator.txt`](./prompts/talent-excavator.txt) | **当你对未来迷茫时**。它会通过多轮对话掘你的“底层回血点”，而不是只看你技能。 |
-| **全能英语教练** | [`english-writing.txt`](./prompts/english-writing.txt) | **备考托福或准备出国时**。专门对付中式思维，帮你改出地道、体面且符合学术规范的内容。 |
-| **百科全书级系统** | [`encyclopedic-system.txt`](./prompts/encyclopedic-system.txt) | **需要深度研究课题时**。它能横向跨学科联想，纵向深挖历史脉络，拒绝废话回答。 |
-| **A7M5 摄影专家** | [`photography-workflow.txt`](./prompts/photography-workflow.txt) | **用 A7M5 拍不出高级感时**。从曝光策略到后期 P3 色彩管理，提供一整套工程化操作。 |
-| **高主体性关系顾问** | [`relationship-analyst.txt`](./prompts/relationship-analyst.txt) | **关系遇到内耗时**。基于博弈论和进化心理学，帮你识破信号，找回自己的掌控权。 |
+| **深度天赋挖掘机** | [`talent-excavator.txt`](./prompts/talent-excavator.txt) | **职业/潜能挖掘**。基于“能量审计”与苏格拉底对话，挖掘底层迁移能力并生成万字说明书。 |
+| **全球化英语教练** | [`english-writing.txt`](./prompts/english-writing.txt) | **托福备考/留学生活**。专攻中式思维纠偏，平衡“学术规范”与“地道口语”的落地场景。 |
+| **百科全书系统** | [`encyclopedic-system.txt`](./prompts/encyclopedic-system.txt) | **深度研究/跨学科分析**。强调知识的纵向深度与横向联结，构建系统化知识树。 |
+| **A7M5 影像专家** | [`photography-workflow.txt`](./prompts/photography-workflow.txt) | **专业摄影/视频 SOP**。基于 S-Log3 暴露规范与 XDR 色彩管理，解决工程级后期问题。 |
+| **高主体性关系策略** | [`relationship-analyst.txt`](./prompts/relationship-analyst.txt) | **核心博弈/边界建立**。引入进化心理学视角，通过信号解码与高位重构，找回关系掌控权。 |
 
 ---
 
-## 📁 内部结构
+## 📁 库结构说明
 
 ```text
 prompt-refinement-lab/
-├── prompts/                   # 这是你可以直接拿来用的“子弹袋”
-│   ├── talent-excavator.txt   # 天赋挖掘（万字说明书版）
+├── prompts/                   # 经优化后的 Skill 集合
+│   ├── talent-excavator.txt   # 天赋挖掘（源自：数字生命卡兹克）
 │   ├── english-writing.txt    # 托福/出国实战英语
-│   ├── encyclopedic-system.txt# 跨学科百科全书库
+│   ├── encyclopedic-system.txt# 跨学科百科全书
 │   ├── photography-workflow.txt# 摄影/视频全流程 SOP
 │   └── relationship-analyst.txt# 关系博弈策略
 ├── README.md
@@ -55,22 +54,22 @@ prompt-refinement-lab/
 
 ---
 
-## � 怎么玩比较高效？
+## 🛠️ 执行建议
 
-为了让这些提示词发挥最大威力，我建议你这么做：
+为了获得最大化的输出效能，推荐遵循以下工程建议：
 
-1. **不要一键输入全部**：进入 `prompts/` 文件夹，选择一个你当下最需要的 `.txt`，一次只喂给 AI 一个角色。
-2. **作为系统指令 (System Prompt)**：
-   - 最好用在 ChatGPT Plus 的 "Custom Instructions"、Claude 的 "Projects" 或者 Cursor 的 `.cursorrules` 里。
-3. **保持对话惯性**：
-   - 特别是“天赋挖掘机”，它设定了“One Question at a Time”。**不要让它一次性列完问题**，你只需要回答它，剩下的交给它的节奏。
-4. **针对性反问**：
-   - 如果觉得它的回答还不够落地，可以直接说：“不够实战，再给点案例”，或者“换成更专业的英文语境”。
+1. **单点注入**：每次对话仅注入一个 Skill，避免模型因角色重叠导致逻辑退化。
+2. **环境适配**：
+   - **ChatGPT / Claude**: 建议配置在 Custom Instructions 或 Project Knowledge 中。
+   - **Cursor**: 可直接作为 `.cursorrules` 的引用或参考。
+3. **反馈闭环**：
+   - 特别是“天赋挖掘机”等交互型提示词，需严格遵守其“One Question at a Time”的节奏，以保证信息提取的深度。
+   - 随时通过“提供具体场景”或“切换表达语域”来微调输出精度。
 
 ---
 
-## 📜 碎碎念之二
+## 📜 声明
 
-代码和提示词都是死的，但思维是活的。我建立这个仓库是为了让自己少做重复劳动，多把心思花在真正的创造上。如果你有更好的优化思路，或者也在死磕地道翻译和专业影像，欢迎交流。
+这里的每一行提示词都是为了减少重复劳动。我将在这个仓库中持续更新经过我验证有效的 Skills。
 
 本项目采用 [MIT License](./LICENSE) 协议。
