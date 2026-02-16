@@ -2,7 +2,7 @@
 
 # 🧪 Prompt Refinement Lab
 
-一个系统化、可复用且经过实战优化的 **个人提示词 Skill 库**
+一个系统化、可复用且经过实战优化的 **个人 AI 能力（Skills & Prompts）库**
 
 ![License](https://img.shields.io/github/license/yuchenzhu-research/prompt-refinement-lab?style=for-the-badge&color=blue)
 ![Stars](https://img.shields.io/github/stars/yuchenzhu-research/prompt-refinement-lab?style=for-the-badge&color=gold)
@@ -15,61 +15,70 @@
 
 ## 📖 设计理念
 
-本仓库旨在解决 Prompt Engineering 在实际落地中的“精度”与“稳定性”问题。不同于宽泛的指令，这里的每一个 Skill 都是我基于特定高频场景（如托福备考、专业摄影、博弈沟通）深度打磨的产物。
+本仓库旨在通过双轨制（Dual-Track）满足不同的 AI 交互需求：
 
-### 核心原则
-- **反“废话”架构**：剥离所有 AI 常见的客套话与模板化表述，追求极致的信息密度。
-- **高主体性 (High Agency)**：所有角色均设定为“教练”或“咨询师”，强调以用户为决策中心，AI 仅提供深度辅助。
-- **工程化 SOP**：针对 A7M5 影像等复杂任务，将零散知识转化为可复现的标准化操作流程。
+1.  **Prompts (一次性调用)**：适用于 ChatGPT/Claude 网页端，即插即用，单点爆发力强。
+2.  **Skills (Agentic 系统调用)**：适用于 Claude Code, Cursor 或定制化 Agent，具备结构化的 YAML 定义，方便系统自动化检索与调用。
 
 ---
 
-## 🚀 Skills 核心能力块
+## ⚡️ Prompts (即插即用版)
 
-建议将选中的 `.txt` 内容直接作为 AI 模型的 **System Prompt**（系统指令）使用。
+建议直接复制 `prompts/` 目录下的 `.txt` 内容。
 
-| Skill 模块 | 核心文件 | 适用场景与技术特性 |
+| Prompt 模块 | 核心逻辑 | 适用场景 |
 | :--- | :--- | :--- |
-| **深度天赋挖掘机** | [`talent-excavator.txt`](./prompts/talent-excavator.txt) | **职业/潜能挖掘**。基于“能量审计”与苏格拉底对话，挖掘底层迁移能力并生成万字说明书。 |
-| **全球化英语教练** | [`english-writing.txt`](./prompts/english-writing.txt) | **托福备考/留学生活**。专攻中式思维纠偏，平衡“学术规范”与“地道口语”的落地场景。 |
-| **百科全书系统** | [`encyclopedic-system.txt`](./prompts/encyclopedic-system.txt) | **深度研究/跨学科分析**。强调知识的纵向深度与横向联结，构建系统化知识树。 |
-| **A7M5 影像专家** | [`photography-workflow.txt`](./prompts/photography-workflow.txt) | **专业摄影/视频 SOP**。基于 S-Log3 暴露规范与 XDR 色彩管理，解决工程级后期问题。 |
-| **高主体性关系策略** | [`relationship-analyst.txt`](./prompts/relationship-analyst.txt) | **核心博弈/边界建立**。引入进化心理学视角，通过信号解码与高位重构，找回关系掌控权。 |
+| **全能英语教练** | 地道表达与学术规范 | 刷托福、改邮件、课业辅导 |
+| **深度天赋挖掘** | 能量审计对话流 | 个人潜力分析、职业导向 |
+| **影像工程专家** | S-Log3 与色彩管理 | A7M5 拍摄及后期流程 |
+| **关系博弈策略** | 高主体性与理性沟通 | 关系内耗解决、边界设定 |
+| **百科全书系统** | 跨学科深度联结 | 系统化课题研究、学术深挖 |
 
 ---
 
-## 📁 库结构说明
+## 🛠️ Skills (Agentic 专业版)
+
+位于 `skills/` 目录下，每个 Skill 包含独立的 `SKILL.md` 定义，专为 **Claude Code**, **Cursor** 或 **Agentic Tools** 优化。
+
+```text
+skills/
+├── talent-excavator/      # 深度天赋挖掘模块
+├── english-writing/       # 全球英语教练模块
+├── encyclopedic-system/   # 跨学科百科系统
+├── photography-workflow/  # 摄影/视频 SOP 模块
+└── relationship-analyst/  # 关系博弈策略模块
+```
+
+### 为什么使用 Skills 模式？
+- **YAML 描述**：包含名称、描述和触发条件 (`when_to_use`)，方便 Agent 自主决策。
+- **结构化输出**：强制执行特定的回答骨架，确保 AI 表现稳定。
+
+---
+
+## 📁 库结构
 
 ```text
 prompt-refinement-lab/
-├── prompts/                   # 经优化后的 Skill 集合
-│   ├── talent-excavator.txt   # 天赋挖掘（源自：数字生命卡兹克）
-│   ├── english-writing.txt    # 托福/出国实战英语
-│   ├── encyclopedic-system.txt# 跨学科百科全书
-│   ├── photography-workflow.txt# 摄影/视频全流程 SOP
-│   └── relationship-analyst.txt# 关系博弈策略
+├── prompts/                   # 用于手动复制的 .txt 指令
+├── skills/                    # 用于 Agent 调用的结构化模块
+│   └── [skill-name]/
+│       └── SKILL.md           # Skill 定义文件
 ├── README.md
 └── LICENSE
 ```
 
 ---
 
-## 🛠️ 执行建议
+## 🚀 执行建议
 
-为了获得最大化的输出效能，推荐遵循以下工程建议：
-
-1. **单点注入**：每次对话仅注入一个 Skill，避免模型因角色重叠导致逻辑退化。
-2. **环境适配**：
-   - **ChatGPT / Claude**: 建议配置在 Custom Instructions 或 Project Knowledge 中。
-   - **Cursor**: 可直接作为 `.cursorrules` 的引用或参考。
-3. **反馈闭环**：
-   - 特别是“天赋挖掘机”等交互型提示词，需严格遵守其“One Question at a Time”的节奏，以保证信息提取的深度。
-   - 随时通过“提供具体场景”或“切换表达语域”来微调输出精度。
+- **网页端用户**：直接进入 `prompts/` 文件夹复制内容。
+- **Claude Code / Agent 用户**：将本仓库路径添加到你的 Agent 知识库或 Skills 路径中。
+- **核心约束**：提倡“One Question at a Time”，让 AI 与你深度互动，而非一次性产出废话。
 
 ---
 
 ## 📜 声明
 
-这里的每一行提示词都是为了减少重复劳动。我将在这个仓库中持续更新经过我验证有效的 Skills。
+这里的每一行指令都是为了减少重复劳动。我将在这个仓库中持续更新经过我验证有效的原子级能力。
 
 本项目采用 [MIT License](./LICENSE) 协议。
